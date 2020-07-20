@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  * @description CS 213 Project 1
+ 	  * @author Dhruvil Patel (dhp68)
+ 	  * @author Nicholas Bonura (njb127)-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ListController">
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Song Library" BorderPane.alignment="CENTER_LEFT">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+         </BorderPane.margin>
+      </Text>
+   </top>
+   <left>
+      <ListView fx:id="listView" onKeyPressed="#listKeyPress" prefHeight="328.0" prefWidth="327.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
+      </ListView>
+   </left>
+   <bottom>
+      <HBox prefHeight="57.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="enterArtist" prefHeight="25.0" prefWidth="120.0" promptText="Artist Name">
+               <HBox.margin>
+                  <Insets left="10.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="enterTitle" prefHeight="25.0" prefWidth="120.0" promptText="Song Name">
+               <HBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="enterAlbum" prefHeight="25.0" prefWidth="120.0" promptText="Album Name">
+               <HBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="enterYear" prefHeight="25.0" prefWidth="120.0" promptText="Year">
+               <HBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#handleAddButton" style="-fx-background-color: #1eb997; -fx-text-fill: #FFFFFF;" text="ADD">
+               <HBox.margin>
+                  <Insets left="25.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="332.0" prefWidth="328.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Song Details">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <HBox prefHeight="35.0" prefWidth="315.0">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="5.0" />
+               </VBox.margin>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
+                     <HBox.margin>
+                        <Insets right="25.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="songTitle" prefHeight="30.0" prefWidth="215.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="315.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
+                     <HBox.margin>
+                        <Insets right="20.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="songArtist" prefHeight="30.0" prefWidth="215.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="315.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Album:">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="songAlbum" prefHeight="30.0" prefWidth="215.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="315.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year:">
+                     <HBox.margin>
+                        <Insets right="20.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="songYear" prefHeight="30.0" prefWidth="215.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="46.0" prefWidth="313.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleUpdateButton" style="-fx-background-color: #1eb997; -fx-text-fill: #FFFFFF;" text="UPDATE">
+                     <HBox.margin>
+                        <Insets left="140.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#handleDeleteButton" style="-fx-background-color: #ff60cb; -fx-text-fill: #FFFFFF;" text="DELETE">
+               <VBox.margin>
+                  <Insets left="140.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
